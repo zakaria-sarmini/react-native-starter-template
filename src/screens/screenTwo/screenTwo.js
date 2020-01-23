@@ -4,7 +4,7 @@ import {Text} from 'react-native';
 export default class ScreenTwo extends Component{
 	render(): React.ReactNode {
 		return (
-			<Text>Hello World!</Text>
+			<Text>Hello Screen Two!</Text>
 		);
 	}
 }

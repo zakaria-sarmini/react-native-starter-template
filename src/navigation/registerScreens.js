@@ -1,19 +1,22 @@
 import React from 'react';
 import { Navigation } from 'react-native-navigation';
 
-import {SCREEN_ONE, SCREEN_TWO, SIDE_MENU} from './screens';
+import { LocalizationProvider } from '../services';
+import { SCREEN_ONE, SCREEN_TWO, SIDE_MENU } from './screens';
 import { ScreenOne, ScreenTwo } from '../screens';
-import { Provider } from '../state';
+import { ReduxSagaProvider } from '../state';
 import { SideMenu } from '../components';
 
 function WrappedComponent(Component){
 	return function inject(props) {
 		const EnhancedComponent = () => (
-			<Provider>
-				<Component
-					{...props}
-				/>
-			</Provider>
+			<ReduxSagaProvider>
+				<LocalizationProvider>
+					<Component
+						{...props}
+					/>
+				</LocalizationProvider>
+			</ReduxSagaProvider>
 		);
 
 		return <EnhancedComponent />;

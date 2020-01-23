@@ -1,1 +1,1 @@
-export { default as Provider } from './provider';
+export { default as ReduxSagaProvider } from './provider';

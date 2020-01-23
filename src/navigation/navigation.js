@@ -2,7 +2,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { Navigation } from 'react-native-navigation';
 
 // screens
-import {SCREEN_ONE, SCREEN_TWO, SIDE_MENU} from './screens';
+import { SCREEN_TWO, SIDE_MENU } from './screens';
 
 // components
 import ComponentOne from './components/componentOne';

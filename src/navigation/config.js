@@ -30,6 +30,30 @@ export default function setNavigationDefaultConfig(config: Options | null){
 			selectedTextColor: 'black',
 			iconColor: 'gray',
 			selectedIconColor: 'black',
+		},
+		animations: {
+			push: {
+				enabled: 'true',
+				topBar: {
+					alpha: {
+						from: 0,
+						to: 1
+					},
+				},
+				bottomTabs: {
+					alpha: {
+						from: 0,
+						to: 1
+					}
+				},
+				content: {
+					alpha: {
+						from: 0,
+						to: 1
+					}
+				}
+			},
+			// pop: {}
 		}
 	};
 

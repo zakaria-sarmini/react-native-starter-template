@@ -2,20 +2,20 @@ import { take, put, fork, all, delay } from 'redux-saga/effects';
 
 import { MODULE_ONE_ADD, moduleOneActionCreators } from './actions';
 
-export function* asyncTestCoreAdd({ payload }) {
-	const { addedCoreValue } = payload;
+export function* asyncAdd({ payload }) {
+	const { addedValue } = payload;
 
 	yield delay(2000);
-	yield put(moduleOneActionCreators.add(addedCoreValue));
+	// yield put(moduleOneActionCreators.add(addedValue));
 }
 
-export function* watchCoreAdd() {
+export function* watchAdd() {
 	while (true) {
 		const action = yield take(MODULE_ONE_ADD);
-		yield* asyncTestCoreAdd(action);
+		yield* asyncAdd(action);
 	}
 }
 
 export default function*() {
-	yield all([fork(watchCoreAdd)]);
+	yield all([fork(watchAdd)]);
 }

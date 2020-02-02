@@ -8,7 +8,7 @@ export default async function App_Service({ url, method, params }) {
 
 	const reqBody = {
 		method,
-		headers
+		headers,
 	};
 
 	if (!isEmpty(params)) {
@@ -16,17 +16,17 @@ export default async function App_Service({ url, method, params }) {
 	}
 
 	return fetch(url, reqBody)
-		.then((response) => response.json())
-		.then((data) => {
+		.then(response => response.json())
+		.then(data => {
 			return {
 				result: 'ok',
-				data
+				data,
 			};
 		})
 		.catch(() => {
 			return {
 				result: 'error',
-				message: 'Please check your internet connection!'
+				message: 'Please check your internet connection!',
 			};
 		});
 }

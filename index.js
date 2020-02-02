@@ -1,4 +1,8 @@
 import { Navigation } from 'react-native-navigation';
-import { initAppRoot } from './src/navigation/navigation';
+import { root } from './src/navigation';
+import NavigationController from './src/navigation/NavigationController';
 
-Navigation.events().registerAppLaunchedListener(() => initAppRoot());
+NavigationController.init();
+Navigation.events().registerAppLaunchedListener(() => {
+	root();
+});

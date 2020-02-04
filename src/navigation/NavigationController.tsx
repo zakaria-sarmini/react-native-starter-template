@@ -40,27 +40,50 @@ export default class NavigationController {
 		},
 		animations: {
 			push: {
-				enabled: true,
-				topBar: {
-					alpha: {
-						from: 0,
-						to: 1,
-					},
-				},
-				bottomTabs: {
-					alpha: {
-						from: 0,
-						to: 1,
-					},
-				},
+				// enabled: true,
+				waitForRender: true,
 				content: {
 					alpha: {
 						from: 0,
 						to: 1,
+						duration: 100,
+					},
+					scaleX: {
+						from: 0.85,
+						to: 1,
+						duration: 100,
+						interpolation: 'decelerate',
+					},
+					scaleY: {
+						from: 0.85,
+						to: 1,
+						duration: 100,
+						interpolation: 'decelerate',
 					},
 				},
 			},
-			// pop: {}
+			pop: {
+				enabled: true,
+				content: {
+					alpha: {
+						from: 1,
+						to: 0,
+						duration: 100,
+					},
+					scaleX: {
+						from: 1,
+						to: 0.85,
+						duration: 100,
+						interpolation: 'decelerate',
+					},
+					scaleY: {
+						from: 1,
+						to: 0.85,
+						duration: 100,
+						interpolation: 'decelerate',
+					},
+				},
+			},
 		},
 	};
 

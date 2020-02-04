@@ -4,7 +4,7 @@ import { Languages } from './enums';
 export const DEFAULT_LANGUAGE = Languages.EN;
 
 const translations = {
-	EN: {
+	en: {
 		SCREEN_ONE: 'Hello Screen One...',
 		SCREEN_TWO: 'Hello Screen Two...',
 		SIDE_MENU: 'Hello Side Menu...',
@@ -12,7 +12,7 @@ const translations = {
 		INCREMENT: 'Increment Counter',
 		DECREMENT: 'DECREMENT Counter',
 	},
-	DE: {
+	de: {
 		SCREEN_ONE: 'Hallo Seite Eins...',
 		SCREEN_TWO: 'Hallo Seite Zwei...',
 		SIDE_MENU: 'Hallo Seitenmenu...',

@@ -1,4 +1,4 @@
-import { State } from '../../state/interfaces/state';
+import { State } from '../../state';
 import { NavigationProps } from '../../navigation';
 
 export interface ScreenOneProps extends NavigationProps {}

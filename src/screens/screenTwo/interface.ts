@@ -1,11 +1,5 @@
-import { State } from '../../state';
-import { NavigationProps } from '../../navigation';
-import { ModuleTwoPayload } from '../../state/moduleTwo/interfaces';
+import { ICoreActions, ICoreState } from '../../state/core/interfaces';
+import IInjectedProps from '../../core/coreInterfaces';
 
-export interface ScreenTwoProps extends NavigationProps {
-	add: (payload: ModuleTwoPayload) => {};
-	reduce: (payload: ModuleTwoPayload) => {};
-	counter: number;
-}
-
-export interface ScreenTwoState extends State {}
+export interface IScreenTwoProps extends IInjectedProps, ICoreState, ICoreActions {}
+export interface IScreenTwoState extends ICoreState {}

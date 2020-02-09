@@ -1,10 +1,15 @@
 import { LocalizationContext } from '../../services/';
 import CoreController from '../../core/coreController';
-import { ScreenTwoProps, ScreenTwoState } from './interface';
+import { IScreenTwoProps, IScreenTwoState } from './interface';
 
 export default class ScreenTwoController extends CoreController<
-	ScreenTwoProps,
-	ScreenTwoState
+	IScreenTwoProps,
+	IScreenTwoState
 > {
 	static contextType = LocalizationContext;
+
+	constructor(props: IScreenTwoProps){
+		super(props);
+		console.log(props);
+	}
 }

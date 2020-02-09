@@ -1,9 +1,12 @@
 import React from 'react';
 import { Button, Text } from 'native-base';
+import { connect } from 'react-redux';
+
 import { LocalizationContext } from '../../services';
 import ScreenTwoController from './controller';
-import { ScreenTwoState } from './interface';
-import { connectModuleTwo } from '../../state/moduleTwo';
+import { IState } from '../../state';
+import { ICoreActions, ICoreState } from '../../state/core/interfaces';
+import { coreActionCreators } from '../../state/core/actions';
 
 class ScreenTwo extends ScreenTwoController {
 	static contextType = LocalizationContext;
@@ -14,11 +17,8 @@ class ScreenTwo extends ScreenTwoController {
 		return (
 			<>
 				<Text>{translations.SCREEN_TWO}</Text>
-				<Button onPress={() => this.props.add({ counter: 2 })}>
+				<Button onPress={() => this.props.add({ numberToAdd: 2 })}>
 					<Text>{translations.INCREMENT}</Text>
-				</Button>
-				<Button onPress={() => this.props.reduce({ counter: 2 })}>
-					<Text>{translations.DECREMENT}</Text>
 				</Button>
 				<Text>{this.props.counter}</Text>
 			</>
@@ -26,10 +26,10 @@ class ScreenTwo extends ScreenTwoController {
 	}
 }
 
-const mapStateToProps = (state: ScreenTwoState) => {
+const mapStateToProps = (state: IState): ICoreState => {
 	return {
-		counter: state.moduleTwo.counter,
+		counter: state.core.counter,
 	};
 };
 
-export default connectModuleTwo(mapStateToProps)(ScreenTwo);
+export default connect(mapStateToProps, coreActionCreators)(ScreenTwo);

@@ -1,7 +1,5 @@
-import { ModuleOneState } from '../moduleOne/interfaces';
-import { ModuleTwoState } from '../moduleTwo/interfaces';
+import { ICoreState } from '../core/interfaces';
 
-export interface State {
-	moduleOne: ModuleOneState;
-	moduleTwo: ModuleTwoState;
+export interface IState {
+	core: ICoreState;
 }

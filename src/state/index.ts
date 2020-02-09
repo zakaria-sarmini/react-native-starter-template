@@ -1,6 +1,5 @@
 // modules
-export * from './moduleOne';
-export * from './moduleTwo';
+export * from './core';
 
 // providers
 export * from './provider';

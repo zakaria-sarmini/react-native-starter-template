@@ -1,6 +1,6 @@
 import { ReactChild } from 'react';
 
-export interface NavigationProps {
+export interface INavigationProps {
 	children?: ReactChild;
 	componentId: string;
 }

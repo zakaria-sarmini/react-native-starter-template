@@ -1,5 +1,6 @@
-import { State } from '../../state';
-import { NavigationProps } from '../../navigation';
+import { ICoreActions, ICoreState } from '../../state/core/interfaces';
+import IInjectedProps from '../../core/coreInterfaces';
+import { IState } from '../../state';
 
-export interface ScreenOneProps extends NavigationProps {}
-export interface ScreenOneState extends State {}
+export interface IScreenOneProps extends IInjectedProps, ICoreState, ICoreActions {}
+export interface IScreenOneState extends IState {}

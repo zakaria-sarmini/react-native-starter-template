@@ -1,10 +1,10 @@
 import { Dimensions, Platform, StatusBar, StyleSheet } from 'react-native';
 import normalize from 'react-native-normalize';
 
-const DEFAULT_ANDROID_HEADER_HEIGHT = 56;
-const DEFAULT_IOS_HEADER_HEIGHT = 56;
-const DEFAULT_ANDROID_FOOTER_HEIGHT = 56;
-const DEFAULT_IOS_FOOTER_HEIGHT = 56;
+const DEFAULT_ANDROID_HEADER_HEIGHT = normalize(56);
+const DEFAULT_IOS_HEADER_HEIGHT = normalize(56);
+const DEFAULT_ANDROID_FOOTER_HEIGHT = normalize(56);
+const DEFAULT_IOS_FOOTER_HEIGHT = normalize(56);
 
 class CoreStyles {
 	private _headerHeight: number =
@@ -22,7 +22,10 @@ class CoreStyles {
 	}
 
 	set headerHeight(headerHeight: number) {
-		this._headerHeight = headerHeight;
+		this._headerHeight = normalize(headerHeight);
+		this.globalStyles = StyleSheet.create({
+			header: { height: headerHeight },
+		}) as any;
 	}
 
 	get footerHeight(): number {
@@ -30,7 +33,10 @@ class CoreStyles {
 	}
 
 	set footerHeight(footerHeight: number) {
-		this._footerHeight = footerHeight;
+		this._footerHeight = normalize(footerHeight);
+		this.globalStyles = StyleSheet.create({
+			footer: { height: footerHeight },
+		}) as any;
 	}
 
 	constructor(styleSheet?: any) {
@@ -62,6 +68,18 @@ class CoreStyles {
 	}
 
 	private _globalStyles = StyleSheet.create({
+		colorPrimary: {
+			color: '#f95212',
+		},
+		bgPrimary: {
+			backgroundColor: '#f95212',
+		},
+		colorSecondary: {
+			backgroundColor: '#5f27cd',
+		},
+		bgSecondary: {
+			backgroundColor: '#5f27cd',
+		},
 		colorWhite: {
 			color: '#fff',
 		},
@@ -115,6 +133,12 @@ class CoreStyles {
 		},
 		fontBig: {
 			fontSize: normalize(22),
+		},
+		fontHuge: {
+			fontSize: normalize(24),
+		},
+		fontBold: {
+			fontWeight: 'bold',
 		},
 		flex1: {
 			flex: 1,
@@ -201,6 +225,9 @@ class CoreStyles {
 		height12: {
 			height: this.getContentHeight(),
 		},
+		noMargin: {
+			margin: 0,
+		},
 		margin: {
 			margin: normalize(16),
 		},
@@ -250,7 +277,10 @@ class CoreStyles {
 			textAlignVertical: 'center',
 		},
 		header: {
-			height: this.headerHeight,
+			height: this._headerHeight,
+		},
+		footer: {
+			height: this._footerHeight,
 		},
 	});
 }

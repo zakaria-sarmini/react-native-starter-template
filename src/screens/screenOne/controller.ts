@@ -4,11 +4,11 @@ import { LocalizationContext } from '../../services/';
 import { NavigationButtons } from '../../navigation/enums/buttons';
 import CoreController from '../../core/coreController';
 import { Screens } from '../enums/screens';
-import { ScreenOneProps, ScreenOneState } from './interface';
+import { IScreenOneProps, IScreenOneState } from './interface';
 
 export default class ScreenOneController extends CoreController<
-	ScreenOneProps,
-	ScreenOneState
+	IScreenOneProps,
+	IScreenOneState
 > {
 	static contextType = LocalizationContext;
 
